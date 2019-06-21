@@ -3,13 +3,20 @@
     <p>I'm the sidenav</p>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" fxLayoutGap="10px">
       <div>
-        <button (click)="sidenav.toggle()">Toggle Sidenav</button>
+        <button (click)="sidenav.toggle()" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
       </div>
       <div>LOGO</div>
-      <div>SignUp</div>
-      <div>Login</div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" >
+        <ul fxLayout class="navigation-items" fxLayoutGap="10px">
+          <li><a routerLink="/signup">SignUp</a></li>
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/training">Training</a></li>
+        </ul>
+      </div>
     </mat-toolbar>
     <main>
         <router-outlet></router-outlet>

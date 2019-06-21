@@ -1,5 +1,5 @@
 <section>
-  <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <mat-form-field>
       <input matInput
       type="email"
@@ -30,7 +30,8 @@
       <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
       <mat-datepicker #datePicker></mat-datepicker>
     </mat-form-field>
-      <mat-checkbox ngModel name="agree">Agree to terms</mat-checkbox>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
+      <mat-checkbox ngModel color="primary" name="agree" required>Agree to terms</mat-checkbox>
+    <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Submit</button>
   </form>
 </section>
+

@@ -1,9 +1,18 @@
-<section fxLayout fxLayoutAlign="center">
-    <mat-card fxFlex="400px">
-      <mat-card-title>Time to start a workout</mat-card-title>
-      <mat-card-content>Select type of training</mat-card-content>
-      <mat-card-actions>
-        <button type="submit" mat-button>Start</button>
+<section class="new-training" fxLayout fxLayoutAlign="center">
+    <mat-card fxFlex="300px" FxFlex.xs="100%">
+      <mat-card-title fxLayoutAlign="center">Time to start a workout</mat-card-title>
+      <mat-card-content fxLayoutAlign="center">
+        <mat-form-field>
+            <mat-label>Select type of training</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let type of trainingType" [value]="type">
+                {{type}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center">
+        <button color="primary" type="submit" mat-button (click)="onStartTraining()">Start</button>
       </mat-card-actions>
     </mat-card>
 </section>
